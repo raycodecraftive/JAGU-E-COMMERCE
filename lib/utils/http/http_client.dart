@@ -2,9 +2,15 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:t_store/utils/http/endpoints.dart';
+import 'package:t_store/utils/local_storage/storage_utility.dart';
 
 class THttpHelper {
   // Helper method to make a GET request
+
+  static Future<String?> getToken() async {
+    return await TLocalStorage().readData("access_token");
+  }
+
   static Future<Map<String, dynamic>> get(String endpoint) async {
     final response =
         await http.get(Uri.parse('${Endpoints.BASE_URL}$endpoint'));
@@ -20,7 +26,10 @@ class THttpHelper {
 
     final response = await http.post(
       url,
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer ${await getToken()}"
+      },
       body: json.encode(data),
     );
 
@@ -34,7 +43,10 @@ class THttpHelper {
   static Future<Map<String, dynamic>> put(String endpoint, dynamic data) async {
     final response = await http.put(
       Uri.parse('${Endpoints.BASE_URL}$endpoint'),
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer ${await getToken()}"
+      },
       body: json.encode(data),
     );
     return _handleResponse(response);

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:t_store/features/authentication/screens/signup.widgets/signup_form.dart';
@@ -98,7 +99,11 @@ class _SignupScreenState extends State<SignupScreen> {
                             username: username.text);
                       }
                     },
-                    child: const Text(TTexts.createAccount),
+                    child: snapshot.isRegistering
+                        ? const CupertinoActivityIndicator(
+                            color: Colors.white,
+                          )
+                        : const Text(TTexts.createAccount),
                   ),
                 ),
                 const SizedBox(height: TSizes.spaceBtwSections),

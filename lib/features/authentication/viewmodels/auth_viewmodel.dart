@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:t_store/utils/http/endpoints.dart';
 import 'package:t_store/utils/http/http_client.dart';
+import 'package:t_store/utils/local_storage/storage_utility.dart';
 
 class AuthViewModel extends ChangeNotifier {
   bool _isLoginIn = false;
@@ -32,14 +33,19 @@ class AuthViewModel extends ChangeNotifier {
       _isLoginIn = true;
       notifyListeners();
 
+      await Future.delayed(Duration(seconds: 2));
       var response = await THttpHelper.post(Endpoints.LOGIN, {
         'email': email,
         'password': password,
       });
+      var token = response['accessToken'];
+      await TLocalStorage().saveData('access_token', token);
 
       print(response);
       onSuccess();
     } catch (err) {
+      _isLoginIn = false;
+
       handleError(err.toString(), onError);
     }
   }
@@ -53,8 +59,27 @@ class AuthViewModel extends ChangeNotifier {
     required String phoneNumber,
     required VoidCallback onSuccess,
     required VoidCallback onError,
-  }) {
-    try {} catch (err) {
+  }) async {
+    try {
+      _isRegistering = true;
+      _isAuthError = false;
+      notifyListeners();
+      await Future.delayed(Duration(seconds: 2));
+
+      var response = await THttpHelper.post(Endpoints.REGISTER, {
+        'email': email,
+        'password': password,
+        'username': username,
+        "firstName": firstName,
+        "lastName": lastName,
+        "phoneNumber": phoneNumber
+      });
+
+      print(response);
+      onSuccess();
+    } catch (err) {
+      _isLoginIn = false;
+
       handleError(err.toString(), onError);
     }
   }

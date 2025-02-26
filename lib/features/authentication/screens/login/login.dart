@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
@@ -168,7 +169,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   }
                                 },
                                 // Get.to(() => const NavigationMenu()),
-                                child: const Text(TTexts.signIn))),
+                                child: snapshot.isLoginIn
+                                    ? CupertinoActivityIndicator(
+                                        color: Colors.white,
+                                      )
+                                    : const Text(TTexts.signIn))),
                         const SizedBox(height: TSizes.spaceBtwItems),
 
                         // Create Account Button

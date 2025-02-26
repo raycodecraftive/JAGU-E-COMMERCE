@@ -3,7 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/authentication/screens/widgets/products.cart/product_card_vertical.dart';
-import 'package:t_store/features/shop/screens/home/widgets/images/promo_sliderls/constants/sizes.dart';
+import 'package:t_store/features/shop/screens/home/widgets/images/promo_slider.dart';
+import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/image_strings.dart';
+import 'package:t_store/utils/constants/sizes.dart';
 
 class Sendtolk extends StatelessWidget {
   const Sendtolk({super.key});
