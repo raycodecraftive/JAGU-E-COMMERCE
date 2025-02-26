@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/authentication/screens/widgets/category_tab.dart';
-import 'package:t_store/features/shop/all_products/all_brands.dart';
-import 'package:t_store/features/shop/screens/home/widgets/tabbar.dart';
 import 'package:t_store/features/shop/screens/search/search_container.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
+
+import '../screens/home/widgets/tabbar.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});
@@ -56,7 +55,7 @@ class Store extends StatelessWidget {
                       TSectionHeading(
                           title: 'Featured Brands',
                           onPressed: () {
-                            Get.to(() => const AllBrandsScreen());
+                            // Get.to(() => const AllBrandsScreen());
                           }),
                       const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 

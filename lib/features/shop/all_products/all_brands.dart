@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/features/shop/all_products/brand_products.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 class AllBrandsScreen extends StatelessWidget {
@@ -27,10 +25,10 @@ class AllBrandsScreen extends StatelessWidget {
                 itemCount: 8,
                 mainAxisExtent: 80,
                 itemBuilder: (context, index) => GestureDetector(
-                  //showBorder: true, // Assuming this displays brand information
-                  onTap: () => Get.to(() =>
-                      const BrandProducts()), // Navigate to BrandProducts on tap
-                ),
+                    //showBorder: true, // Assuming this displays brand information
+                    // onTap: () => Get.to(() =>
+                    //     const BrandProducts()), // Navigate to BrandProducts on tap
+                    ),
               ),
             ],
           ),

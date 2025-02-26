@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/authentication/screens/widgets/products.cart/product_card_vertical.dart';
-import 'package:t_store/features/shop/all_products/all_products.dart';
-import 'package:t_store/features/shop/screens/home/widgets/images/promo_slider.dart';
-import 'package:t_store/features/shop/screens/sub_category/sub_category.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:t_store/features/shop/screens/home/widgets/images/promo_sliderls/constants/sizes.dart';
 
 class Sendtolk extends StatelessWidget {
   const Sendtolk({super.key});
@@ -158,7 +152,7 @@ class Sendtolk extends StatelessWidget {
                           /// Circular Icon
                           InkWell(
                             onTap: () {
-                              Get.to(() => const SubCategoriesScreen());
+                              // Get.to(() => const SubCategoriesScreen());
                             },
                             child: Container(
                               width: 56,
@@ -183,7 +177,7 @@ class Sendtolk extends StatelessWidget {
                             width: 80,
                             child: GestureDetector(
                               onTap: () {
-                                Get.to(() => const SubCategoriesScreen());
+                                // Get.to(() => const SubCategoriesScreen());
                               },
                               child: Text(
                                 'Kottu',
@@ -215,7 +209,7 @@ class Sendtolk extends StatelessWidget {
               /// Heading
               TSectionHeading(
                 title: 'Popular Products',
-                onPressed: () => Get.to(() => const AllProducts()),
+                // onPressed: () => Get.to(() => const AllProducts()),
               ),
 
               /// Popular Products
@@ -241,7 +235,7 @@ class Sendtolk extends StatelessWidget {
                   children: [
                     TSectionHeading(
                       title: "Places you might Like",
-                      onPressed: () => Get.to(() => const AllProducts()),
+                      // onPressed: () => Get.to(() => const AllProducts()),
                     ),
                     const Text(
                       'sponsored',
@@ -259,7 +253,7 @@ class Sendtolk extends StatelessWidget {
                     const SizedBox(height: 10),
                     TSectionHeading(
                       title: "Tailored to your taste",
-                      onPressed: () => Get.to(() => const AllProducts()),
+                      // onPressed: () => Get.to(() => const AllProducts()),
                     ),
 
                     const TPromoSlider(

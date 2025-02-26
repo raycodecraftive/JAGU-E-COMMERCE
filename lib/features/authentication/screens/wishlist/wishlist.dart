@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
-import 'package:t_store/features/shop/screens/home/home.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 class FavouriteScreen extends StatelessWidget {
@@ -17,8 +15,8 @@ class FavouriteScreen extends StatelessWidget {
             Text('Wishlist', style: Theme.of(context).textTheme.headlineMedium),
         actions: [
           IconButton(
-            icon: const Icon(Iconsax.add),
-            onPressed: () => Get.to(const HomeScreen()),
+            icon: const Icon(Iconsax.add), onPressed: () {},
+            // onPressed: () => Get.to(const HomeScreen()),
           ),
         ],
       ),

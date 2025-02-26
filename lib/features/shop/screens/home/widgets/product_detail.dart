@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
@@ -83,8 +82,13 @@ class ProductDetail extends StatelessWidget {
                       IconButton(
                           icon: const Icon(Iconsax.arrow_right,
                               size: 18, color: Colors.black),
-                          onPressed: () =>
-                              Get.to(() => const ProductReviewsScreen())),
+                          // onPressed: () =>
+                          //     Get.to(() => const ProductReviewsScreen())),
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ProductReviewsScreen())))
                     ],
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),

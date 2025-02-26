@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
-
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../utils/constants/sizes.dart';
@@ -29,7 +28,7 @@ class SuccessScreen extends StatelessWidget {
               /// Image
               Image(
                   image: AssetImage(TImages.successfullyRegisterAnimation),
-                  width: THelperFunctions.screenWidth() * 0.6),
+                  width: THelperFunctions.screenWidth(context) * 0.6),
 
               const SizedBox(height: TSizes.spaceBtwSections),
 

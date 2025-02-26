@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:t_store/checkout/billing_address_section.dart';
 import 'package:t_store/checkout/billing_amount_section.dart';
 import 'package:t_store/checkout/billing_payment_section.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/common/widgets/success_screen/success_screen.dart';
 import 'package:t_store/features/authentication/screens/cart/cart_item.dart';
 import 'package:t_store/features/authentication/screens/cart/coupon_widget.dart';
-import 'package:t_store/navigation_menu.dart';
 import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
@@ -74,12 +70,12 @@ class CheckoutScreen extends StatelessWidget {
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: ElevatedButton(
           onPressed: () {
-            Get.to(() => SuccessScreen(
-                  image: TImages.successfulPaymentIcon,
-                  title: 'Payment Success !',
-                  subTitle: 'Your item will be shipped soon !',
-                  onPressed: () => Get.offAll(() => const NavigationMenu()),
-                ));
+            // Get.to(() => SuccessScreen(
+            //       image: TImages.successfulPaymentIcon,
+            //       title: 'Payment Success !',
+            //       subTitle: 'Your item will be shipped soon !',
+            //       onPressed: () => Get.offAll(() => const NavigationMenu()),
+            //     ));
           },
           child: const Text('Checkout \$256.0'),
         ),

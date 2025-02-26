@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-//import '../../../../../common/widgets/image_text/image_text_vertical.dart';
+
 import '../../../../../common/widgets/texts/section_heading.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
-import '../../../controllers/home_controller.dart';
-//import '../../sub_category/sub-categories.dart';
 
 class THeaderCategories extends StatelessWidget {
   const THeaderCategories({
@@ -14,7 +11,6 @@ class THeaderCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeController());
     //final categories = controller.getFeaturedCategories();
     return Padding(
       padding: const EdgeInsets.only(left: TSizes.defaultSpace),

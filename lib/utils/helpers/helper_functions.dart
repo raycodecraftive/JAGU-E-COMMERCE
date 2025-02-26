@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class THelperFunctions {
@@ -39,15 +38,15 @@ class THelperFunctions {
     }
   }
 
-  static void showSnackBar(String message) {
-    ScaffoldMessenger.of(Get.context!).showSnackBar(
+  static void showSnackBar(String message, BuildContext context) {
+    ScaffoldMessenger.of(context!).showSnackBar(
       SnackBar(content: Text(message)),
     );
   }
 
-  static void showAlert(String title, String message) {
+  static void showAlert(String title, String message, BuildContext context) {
     showDialog(
-      context: Get.context!,
+      context: context!,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(title),
@@ -82,16 +81,16 @@ class THelperFunctions {
     return Theme.of(context).brightness == Brightness.dark;
   }
 
-  static Size screenSize() {
-    return MediaQuery.of(Get.context!).size;
+  static Size screenSize(BuildContext c) {
+    return MediaQuery.of(c!).size;
   }
 
-  static double screenHeight() {
-    return MediaQuery.of(Get.context!).size.height;
+  static double screenHeight(BuildContext c) {
+    return MediaQuery.of(c!).size.height;
   }
 
-  static double screenWidth() {
-    return MediaQuery.of(Get.context!).size.width;
+  static double screenWidth(BuildContext c) {
+    return MediaQuery.of(c!).size.width;
   }
 
   static String getFormattedDate(DateTime date,

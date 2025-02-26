@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // Make sure to import GetX
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/features/authentication/screens/cart/cart.dart'; // Import the CartScreen
 import 'package:t_store/features/authentication/screens/address/widgets/custom_shapes/containers/TCartCounterIcon.dart';
 import 'package:t_store/features/authentication/screens/widgets/products.cart/product_card_vertical.dart';
-import 'package:t_store/features/shop/all_products/all_products.dart';
 import 'package:t_store/features/shop/screens/home/widgets/images/promo_slider.dart';
-import 'package:t_store/features/shop/screens/sub_category/sub_category.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -53,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                       TCartCounterIcon(
                         onPressed: () {
                           // Navigate to the CartScreen when the icon is pressed
-                          Get.to(() => const CartScreen());
+                          // Get.to(() => const CartScreen());
                         },
                         counterBgColor: Colors.black,
                         counterTextColor: Colors.white,
@@ -109,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                               /// -- Circular Icon
                               InkWell(
                                 onTap: () {
-                                  Get.to(() => const SubCategoriesScreen());
+                                  // Get.to(() => const SubCategoriesScreen());
                                 },
                                 child: Container(
                                   width: 56,
@@ -134,7 +130,7 @@ class HomeScreen extends StatelessWidget {
                                 width: 80, // Adjust width as needed
                                 child: GestureDetector(
                                   onTap: () {
-                                    Get.to(() => const SubCategoriesScreen());
+                                    // Get.to(() => const SubCategoriesScreen());
                                   },
                                   child: Text(
                                     'Shoes',
@@ -174,9 +170,9 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// -- Heading
-                  TSectionHeading(
-                      title: 'Popular Products',
-                      onPressed: () => Get.to(() => const AllProducts())),
+                  // TSectionHeading(
+                  //     title: 'Popular Products',
+                  //     onPressed: () => Get.to(() => const AllProducts()),),
 
                   /// -- Popular Products
                   GridView.builder(

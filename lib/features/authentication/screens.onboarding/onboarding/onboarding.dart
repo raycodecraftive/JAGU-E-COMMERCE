@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:t_store/features/authentication/controllers.onboarding/onboarding_controller.dart';
 import 'package:t_store/features/authentication/screens/widgets/onboarding_dot_navigation.dart';
 import 'package:t_store/features/authentication/screens/widgets/onboarding_next_button.dart';
 import 'package:t_store/features/authentication/screens/widgets/onboarding_skip.dart';
@@ -21,16 +19,13 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(OnboardingController());
-
     return Scaffold(
       body: Stack(
         children: [
           /// Horizontal Scrollable Pages
           PageView(
-            controller: controller.pageController,
-            onPageChanged:
-                controller.updatePageIndicator, // Pass the PageController here
+            // onPageChanged:
+            //     controller.updatePageIndicator, // Pass the PageController here
             children: const [
               OnBoardingPage(
                 image: TImages.onBoardingImage1,
@@ -80,8 +75,8 @@ class OnBoardingPage extends StatelessWidget {
       child: Column(
         children: [
           Image(
-            width: THelperFunctions.screenWidth() * 0.9,
-            height: THelperFunctions.screenHeight() * 0.6,
+            width: THelperFunctions.screenWidth(context) * 0.9,
+            height: THelperFunctions.screenHeight(context) * 0.6,
             image: AssetImage(image),
           ),
           Text(

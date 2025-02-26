@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
@@ -17,7 +16,7 @@ class ResetPassword extends StatelessWidget {
             false, // This would remove the automated back arrow
         actions: [
           IconButton(
-              onPressed: () => Get.back(),
+              onPressed: () => Navigator.pop(context),
               icon: const Icon(CupertinoIcons.clear))
         ],
       ),
@@ -29,7 +28,7 @@ class ResetPassword extends StatelessWidget {
               /// Image
               Image(
                   image: const AssetImage(TImages.deliveredEmailIllustration),
-                  width: THelperFunctions.screenWidth() * 0.6),
+                  width: THelperFunctions.screenWidth(context) * 0.6),
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Title & Subtitle

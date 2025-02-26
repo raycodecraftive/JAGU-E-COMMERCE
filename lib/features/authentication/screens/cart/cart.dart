@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:t_store/checkout/checkout.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/features/authentication/screens/cart/add_item.dart'; // Ensure correct import path
 import 'package:t_store/features/authentication/screens/cart/add_remove_button.dart';
 import 'package:t_store/features/authentication/screens/cart/cart_item.dart';
-
 import 'package:t_store/utils/constants/sizes.dart';
 
 class CartScreen extends StatelessWidget {
@@ -26,7 +23,8 @@ class CartScreen extends StatelessWidget {
               return Column(
                 children: [
                   const TCartItem(),
-                  const SizedBox(height: TSizes.spaceBtwItems), // Vertical spacing
+                  const SizedBox(
+                      height: TSizes.spaceBtwItems), // Vertical spacing
                   Row(
                     children: [
                       const SizedBox(width: 70), // Extra space for alignment
@@ -51,7 +49,7 @@ class CartScreen extends StatelessWidget {
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: ElevatedButton(
           onPressed: () {
-            Get.to(() => const CheckoutScreen());
+            // Get.to(() => const CheckoutScreen());
           },
           child: const Text('Checkout \$256.0'),
         ),

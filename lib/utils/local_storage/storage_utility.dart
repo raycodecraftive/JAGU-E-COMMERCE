@@ -1,4 +1,4 @@
-import 'package:get_storage/get_storage.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class TLocalStorage {
   static final TLocalStorage _instance = TLocalStorage._internal();
@@ -9,44 +9,42 @@ class TLocalStorage {
 
   TLocalStorage._internal();
 
-  final _storage = GetStorage();
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
 
-  // Generic method to save data
-  Future<void> saveData<T>(String key, T value) async {
-    await _storage.write(key, value);
+  // Save data securely
+  Future<void> saveData(String key, String value) async {
+    await _storage.write(key: key, value: value);
   }
 
-  // Generic method to read data
-  T? readData<T>(String key) {
-    return _storage.read<T>(key);
+  // Read data securely
+  Future<String?> readData(String key) async {
+    return await _storage.read(key: key);
   }
 
-  // Generic method to remove data
+  // Remove data securely
   Future<void> removeData(String key) async {
-    await _storage.remove(key);
+    await _storage.delete(key: key);
   }
 
-  // Clear all data in storage
+  // Clear all secure storage data
   Future<void> clearAll() async {
-    await _storage.erase();
+    await _storage.deleteAll();
   }
 }
 
-
 /// *** *** *** *** *** Example *** *** *** *** *** ///
 
-// LocalStorage localStorage = LocalStorage();
+// final localStorage = TLocalStorage();
 //
-// // Save data
-// localStorage.saveData('username', 'JohnDoe');
+// // Save data securely
+// await localStorage.saveData('username', 'JohnDoe');
 //
-// // Read data
-// String? username = localStorage.readData<String>('username');
+// // Read data securely
+// String? username = await localStorage.readData('username');
 // print('Username: $username'); // Output: Username: JohnDoe
 //
-// // Remove data
-// localStorage.removeData('username');
+// // Remove data securely
+// await localStorage.removeData('username');
 //
-// // Clear all data
-// localStorage.clearAll();
-
+// // Clear all secure storage data
+// await localStorage.clearAll();

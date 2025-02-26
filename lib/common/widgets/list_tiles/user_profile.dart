@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:t_store/features/authentication/screens/address/widgets/profile.dart';
 import 'package:t_store/features/shop/images/t_circular_image.dart';
 import 'package:t_store/utils/constants/colors.dart';
@@ -31,8 +30,11 @@ class TUserProfileTile extends StatelessWidget {
       ),
       trailing: IconButton(
         onPressed: onPressed ??
-            () => Get.to(
-                () => const ProfileScreen()), // Use passed function or default
+            () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ProfileScreen(),
+                  ),
+                ),
         icon: const Icon(Icons.edit,
             color: TColors.black), // Fixed Icon reference
       ),

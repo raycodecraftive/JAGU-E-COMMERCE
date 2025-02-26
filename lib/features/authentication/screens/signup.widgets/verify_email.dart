@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:t_store/data/repositories/repositories.authentication/authentication_repository.dart';
-import 'package:t_store/features/authentication/signup/verify_email_controller.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
@@ -15,15 +12,13 @@ class VerifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(VerifyEmailController());
-
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () => AuthenticationRepository.instance.logout(),
             icon: const Icon(CupertinoIcons.clear),
+            onPressed: () {},
           ),
         ],
       ),
@@ -35,7 +30,7 @@ class VerifyEmailScreen extends StatelessWidget {
               //Image
               Image.asset(
                 TImages.deliveredEmailIllustration,
-                width: THelperFunctions.screenWidth() * 0.6,
+                width: THelperFunctions.screenWidth(context) * 0.6,
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -57,14 +52,16 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => controller.checkEmailVerificationStatus(),
+                    // onPressed: () => controller.checkEmailVerificationStatus(),
+                    onPressed: () {},
                     child: const Text(TTexts.tContinue)),
               ),
               const SizedBox(height: TSizes.spaceBtwItems),
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () => controller.sendEmailVerification(),
+                  // onPressed: () => controller.sendEmailVerification(),
+                  onPressed: () {},
                   child: const Text(TTexts.resendEmail),
                 ),
               ),
