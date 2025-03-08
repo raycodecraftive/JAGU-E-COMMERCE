@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:t_store/features/authentication/screens.onboarding/splash_screen.view.dart';
 import 'package:t_store/features/authentication/viewmodels/auth_viewmodel.dart';
+import 'package:t_store/features/shop/viewmodels/product.viewmodel.dart';
 import 'package:t_store/features/user/viewmodel/user.viewmodel.dart';
 import 'package:t_store/utils/theme/theme.dart';
 
@@ -23,6 +24,7 @@ Future<void> main() async {
     providers: [
       ChangeNotifierProvider(create: (context) => AuthViewModel()),
       ChangeNotifierProvider(create: (context) => UserViewModel()),
+      ChangeNotifierProvider(create: (context) => ProductViewModel()),
     ],
     child: Directionality(
       textDirection: TextDirection.ltr,

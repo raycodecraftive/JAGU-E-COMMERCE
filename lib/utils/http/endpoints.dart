@@ -5,4 +5,8 @@ class Endpoints {
   static const String REGISTER = "/auth/register";
 
   static const String USER = "/user-profile/me";
+
+  static const String PRODUCTS = "/products";
+
+  static const String GET_CATEGORY = "/products/categories";
 }

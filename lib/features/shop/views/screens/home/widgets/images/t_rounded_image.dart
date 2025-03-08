@@ -41,9 +41,12 @@ class TRoundedImage extends StatelessWidget {
               ? BorderRadius.circular(borderRadius)
               : BorderRadius.zero,
           child: Image(
+              height: height,
               fit: fit,
               image: isNetworkImage
-                  ? NetworkImage(imageUrl)
+                  ? NetworkImage(
+                      imageUrl,
+                    )
                   : AssetImage(imageUrl) as ImageProvider),
         ),
       ),

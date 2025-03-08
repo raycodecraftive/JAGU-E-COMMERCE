@@ -119,7 +119,12 @@ class THttpHelper {
 
     if (response.statusCode >= 200 && response.statusCode < 300) {
       _logger.i('✅ $method Request to $endpoint Successful');
-      return json.decode(response.body);
+      var cleanedData = json.decode(response.body);
+
+      if (cleanedData is Map<String, dynamic>) {
+        return cleanedData;
+      }
+      return {"data": cleanedData};
     } else {
       _logger
           .e('❌ $method Request to $endpoint Failed (${response.statusCode})');

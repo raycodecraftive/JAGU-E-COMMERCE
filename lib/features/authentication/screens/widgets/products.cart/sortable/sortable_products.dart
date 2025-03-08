@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/features/authentication/screens/widgets/products.cart/product_card_vertical.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 class TSortableProducts extends StatelessWidget {
@@ -35,18 +34,17 @@ class TSortableProducts extends StatelessWidget {
         const SizedBox(height: TSizes.spaceBtwSections),
 
         /// -- Products
-        GridView.builder(
-          itemCount: 4,
-          shrinkWrap: true,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: TSizes.gridViewspacing,
-            crossAxisSpacing: TSizes.gridViewspacing,
-            mainAxisExtent: 288,
-          ),
-          itemBuilder: (_, index) => const TProductCardVertical(),
-        ),
-        const TProductCardVertical(),
+        // GridView.builder(
+        //   itemCount: 4,
+        //   shrinkWrap: true,
+        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //     crossAxisCount: 2,
+        //     mainAxisSpacing: TSizes.gridViewspacing,
+        //     crossAxisSpacing: TSizes.gridViewspacing,
+        //     mainAxisExtent: 288,
+        //   ),
+        //   itemBuilder: (_, index) => const TProductCardVertical(),
+        // ),
       ],
     );
   }

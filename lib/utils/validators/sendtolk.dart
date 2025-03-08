@@ -2,11 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/features/authentication/screens/widgets/products.cart/product_card_vertical.dart';
-import 'package:t_store/features/shop/views/screens/home/widgets/images/promo_slider.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+
+class TPromoSlider extends StatelessWidget {
+  final List<String> banners;
+
+  const TPromoSlider({Key? key, required this.banners}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 200,
+      child: ListView.builder(
+        itemCount: banners.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Container(
+            width: 300,
+            margin: const EdgeInsets.only(right: TSizes.spaceBtwItems),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
+              child: Image.asset(
+                banners[index],
+                fit: BoxFit.cover,
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
 
 class Sendtolk extends StatelessWidget {
   const Sendtolk({super.key});
@@ -26,6 +57,7 @@ class Sendtolk extends StatelessWidget {
               child: Center(
                 child: Container(
                   alignment: Alignment.bottomLeft,
+                  padding: const EdgeInsets.only(left: 16, bottom: 8),
                   child: Text(
                     'JAGU',
                     style: GoogleFonts.bebasNeue(
@@ -212,22 +244,24 @@ class Sendtolk extends StatelessWidget {
               /// Heading
               TSectionHeading(
                 title: 'Popular Products',
-                // onPressed: () => Get.to(() => const AllProducts()),
+                onPressed: () {
+                  // Get.to(() => const AllProducts());
+                },
               ),
 
               /// Popular Products
-              GridView.builder(
-                itemCount: 4,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: TSizes.gridViewspacing,
-                  crossAxisSpacing: TSizes.gridViewspacing,
-                  mainAxisExtent: 288,
-                ),
-                itemBuilder: (_, index) => const TProductCardVertical(),
-              ),
+              // GridView.builder(
+              //   itemCount: 4,
+              //   shrinkWrap: true,
+              //   physics: const NeverScrollableScrollPhysics(),
+              //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              //     crossAxisCount: 2,
+              //     mainAxisSpacing: TSizes.spaceBtwItems,
+              //     crossAxisSpacing: TSizes.spaceBtwItems,
+              //     mainAxisExtent: 288,
+              //   ),
+              //   itemBuilder: (_, index) => const TProductCardVertical(),
+              // ),
               const SizedBox(height: 10),
 
               /// Footer Section
@@ -238,7 +272,9 @@ class Sendtolk extends StatelessWidget {
                   children: [
                     TSectionHeading(
                       title: "Places you might Like",
-                      // onPressed: () => Get.to(() => const AllProducts()),
+                      onPressed: () {
+                        // Get.to(() => const AllProducts());
+                      },
                     ),
                     const Text(
                       'sponsored',
@@ -256,7 +292,9 @@ class Sendtolk extends StatelessWidget {
                     const SizedBox(height: 10),
                     TSectionHeading(
                       title: "Tailored to your taste",
-                      // onPressed: () => Get.to(() => const AllProducts()),
+                      onPressed: () {
+                        // Get.to(() => const AllProducts());
+                      },
                     ),
 
                     const TPromoSlider(

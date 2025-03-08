@@ -4,15 +4,16 @@ import 'package:t_store/common/styles/shadows.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
 import 'package:t_store/common/widgets/texts/t_product_title_text.dart';
+import 'package:t_store/features/shop/models/product.model.dart';
 import 'package:t_store/features/shop/views/screens/home/widgets/images/t_rounded_image.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/enums.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class TProductCardVertical extends StatelessWidget {
-  const TProductCardVertical({super.key});
+  final Product product;
+  const TProductCardVertical({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class TProductCardVertical extends StatelessWidget {
       // onTap: () => Get.to(() => const ProductDetail()),
       child: Container(
         width: 180,
-        padding: const EdgeInsets.all(1),
+        padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           boxShadow: [TShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
@@ -33,8 +34,9 @@ class TProductCardVertical extends StatelessWidget {
             Stack(
               children: [
                 // -- Thumbnail Image
-                const TRoundedImage(
-                  imageUrl: TImages.productImage1,
+                TRoundedImage(
+                  isNetworkImage: true,
+                  imageUrl: product.imageUrl,
                   applyImageRadius: true,
                 ),
 
@@ -47,7 +49,7 @@ class TProductCardVertical extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: TSizes.sm, vertical: TSizes.xs),
                     child: Text(
-                      '25%',
+                      product.category.name,
                       style: Theme.of(context)
                           .textTheme
                           .labelLarge!
@@ -73,15 +75,14 @@ class TProductCardVertical extends StatelessWidget {
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             // -- Details -- TBrand title with verified Icon
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TProductTitleText(
-                      title: 'Green Nike Air Shoes', smallSize: true),
+                  TProductTitleText(title: product.name, smallSize: true),
                   SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TBrandTitleTextWithVerifiedIcon(title: 'Nike'),
+                  TBrandTitleTextWithVerifiedIcon(title: product.description),
                 ],
               ),
             ),
@@ -91,7 +92,7 @@ class TProductCardVertical extends StatelessWidget {
               children: [
                 // -- Price
                 Text(
-                  '\$35.5',
+                  '£${product.price}',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.headlineMedium,
