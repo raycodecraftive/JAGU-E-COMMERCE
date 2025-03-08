@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:t_store/features/authentication/screens/signup.widgets/signup_form.dart';
 import 'package:t_store/features/authentication/viewmodels/auth_viewmodel.dart';
+import 'package:t_store/otp_screen.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -87,6 +88,12 @@ class _SignupScreenState extends State<SignupScreen> {
                             email: email.text,
                             password: password.text,
                             onSuccess: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => OtpScreen(),
+                                ),
+                              );
                               //   TODO  : Navigate them to otp verification UI
                             },
                             onError: () {
