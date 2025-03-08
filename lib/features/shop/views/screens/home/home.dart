@@ -5,12 +5,12 @@ import 'package:t_store/common/widgets/custom_shapes/containers/primary_header_c
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/authentication/screens/address/widgets/custom_shapes/containers/TCartCounterIcon.dart';
 import 'package:t_store/features/authentication/screens/widgets/products.cart/product_card_vertical.dart';
-import 'package:t_store/features/shop/screens/home/widgets/images/promo_slider.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/device/device_utility.dart';
+import 'package:t_store/utils/extensions/user.extension.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                               .apply(color: TColors.primary),
                         ),
                         Text(
-                          TTexts.homeAppbarSubTitle,
+                          "${context.user.firstName} ${context.user.lastName}",
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/features/authentication/screens/widgets/products.cart/product_card_vertical.dart';
-
-import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/enums.dart';
-import '../../../utils/constants/sizes.dart';
+import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/enums.dart';
+import 'package:t_store/utils/constants/sizes.dart';
 
 class TBrandTitleWithVerifiedIcon extends StatelessWidget {
   const TBrandTitleWithVerifiedIcon({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/features/authentication/screens/address/widgets/profile.dart';
-import 'package:t_store/features/shop/images/t_circular_image.dart';
+import 'package:t_store/features/shop/views/images/t_circular_image.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 
@@ -21,7 +21,7 @@ class TUserProfileTile extends StatelessWidget {
         height: 50,
         padding: 0,
       ),
-      title: const Text(
+      title: Text(
         'Coding With Ray',
         style: TextStyle(
           color: TColors.black,

@@ -4,10 +4,10 @@ import 'package:readmore/readmore.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/authentication/screens/widgets/product_detail_image_slider.dart';
 import 'package:t_store/features/authentication/screens/widgets/products.cart/bottom_add_to_cart_widget.dart';
-import 'package:t_store/features/shop/screens/home/widgets/product_atrributes.dart';
-import 'package:t_store/features/shop/screens/home/widgets/product_meta_data.dart';
-import 'package:t_store/features/shop/screens/home/widgets/rating_share_widget.dart';
-import 'package:t_store/features/shop/screens/product_reviews/product_reviews.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/product_atrributes.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/product_meta_data.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/rating_share_widget.dart';
+import 'package:t_store/features/shop/views/screens/product_reviews/product_reviews.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 

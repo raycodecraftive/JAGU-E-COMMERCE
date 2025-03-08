@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/features/shop/store/brand_show_case.dart';
+import 'package:t_store/features/shop/views/store/brand_show_case.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 

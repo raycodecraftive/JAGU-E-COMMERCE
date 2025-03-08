@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/features/shop/screens/home/widgets/progress_indicator_and_rating.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/progress_indicator_and_rating.dart';
 
 class TOverallProductRating extends StatelessWidget {
   const TOverallProductRating({

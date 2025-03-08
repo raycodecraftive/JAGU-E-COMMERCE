@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
-import 'package:t_store/features/shop/screens/home/widgets/product_reviews/rating_progress_indicator.dart';
-import 'package:t_store/features/shop/screens/home/widgets/product_reviews/user_review_card.dart';
-import 'package:t_store/features/shop/screens/home/widgets/ratings/rating_indicator.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/product_reviews/rating_progress_indicator.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/product_reviews/user_review_card.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/ratings/rating_indicator.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 class ProductReviewsScreen extends StatelessWidget {

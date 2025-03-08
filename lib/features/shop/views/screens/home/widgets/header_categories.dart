@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/utils/constants/colors.dart';
 
-import '../../../../../common/widgets/texts/section_heading.dart';
-import '../../../../../utils/constants/colors.dart';
-import '../../../../../utils/constants/sizes.dart';
+import '../../../../../../utils/constants/sizes.dart';
 
 class THeaderCategories extends StatelessWidget {
   const THeaderCategories({

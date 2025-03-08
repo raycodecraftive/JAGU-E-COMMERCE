@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/circular_container.dart';
-import 'package:t_store/features/shop/screens/home/widgets/images/t_rounded_image.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/images/t_rounded_image.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 

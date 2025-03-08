@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
 import 'package:t_store/common/widgets/texts/t_product_title_text.dart';
-import 'package:t_store/features/shop/screens/home/widgets/images/t_rounded_image2.dart';
+import 'package:t_store/features/shop/views/screens/home/widgets/images/t_rounded_image2.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';

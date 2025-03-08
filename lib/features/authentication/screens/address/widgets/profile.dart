@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/authentication/screens/address/widgets/profile_menu.dart';
-import 'package:t_store/features/shop/images/t_circular_image.dart';
+import 'package:t_store/features/shop/views/images/t_circular_image.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
