@@ -1,10 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/features/personalization/screens/settings/settings.dart';
+import 'package:t_store/features/shop/screens/home/home.dart';
+import 'package:t_store/features/shop/store/store.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
-class NavigationMenu extends StatelessWidget {
+import 'features/authentication/screens/wishlist/wishlist.dart';
+import 'utils/validators/sendtolk.dart';
+
+class NavigationMenu extends StatefulWidget {
   const NavigationMenu({super.key});
+
+  @override
+  State<NavigationMenu> createState() => _NavigationMenuState();
+}
+
+class _NavigationMenuState extends State<NavigationMenu> {
+  final screens = [
+    const HomeScreen(),
+    const Store(),
+    const Sendtolk(),
+    const FavouriteScreen(),
+    const SettingsScreen(),
+  ];
+
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +33,11 @@ class NavigationMenu extends StatelessWidget {
 
     return Scaffold(
         bottomNavigationBar: NavigationBar(
+          onDestinationSelected: (index) {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
           height: 80,
           elevation: 0,
           backgroundColor: darkMode ? TColors.black : Colors.white,
@@ -34,7 +60,7 @@ class NavigationMenu extends StatelessWidget {
                 label: 'Profile'),
           ],
         ),
-        body: SizedBox());
+        body: screens[selectedIndex]);
   }
 }
 

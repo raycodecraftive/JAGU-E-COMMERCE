@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
-import 'package:t_store/features/authentication/screens/login/login.dart';
+import 'package:t_store/features/authentication/screens.onboarding/splash_screen.view.dart';
 import 'package:t_store/features/authentication/viewmodels/auth_viewmodel.dart';
+import 'package:t_store/features/user/viewmodel/user.viewmodel.dart';
 import 'package:t_store/utils/theme/theme.dart';
 
 /// -- Entry point of Flutter App
@@ -21,12 +22,13 @@ Future<void> main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => AuthViewModel()),
+      ChangeNotifierProvider(create: (context) => UserViewModel()),
     ],
     child: Directionality(
       textDirection: TextDirection.ltr,
       child: MaterialApp(
         theme: TAppTheme.lightTheme,
-        home: LoginScreen(),
+        home: SplashScreen(),
       ),
     ),
   ));
